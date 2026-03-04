@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KodNest - Let's Build</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="logo-top-left">
+        <img src="image.png" alt="Logo" class="main-logo">
+    </div>
+
+    <main class="container">
+        <div id="main-view">
+            <header class="hero">
+                <p class="subtitle">KodNest Application features</p>
+                <h1 class="title">The choice for the future</h1>
+                <p class="hero-desc">Your ultimate companion for your placement journey.</p>
+            </header>
+
+            <section class="grid" id="cards-grid">
+                <!-- Cards -->
+                <div class="card" onclick="navigateTo('Home', 'home')">
+                    <div class="card-icon"><i data-lucide="home"></i></div>
+                    <h3 class="card-title">Home</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('courses', 'book-open')">
+                    <div class="card-icon"><i data-lucide="book-open"></i></div>
+                    <h3 class="card-title">courses</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('practices', 'code-2')">
+                    <div class="card-icon"><i data-lucide="code-2"></i></div>
+                    <h3 class="card-title">practices</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('mentor connect', 'users')">
+                    <div class="card-icon"><i data-lucide="users"></i></div>
+                    <h3 class="card-title">mentor connect</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('feedback', 'message-square')">
+                    <div class="card-icon"><i data-lucide="message-square"></i></div>
+                    <h3 class="card-title">feedback</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('community', 'globe')">
+                    <div class="card-icon"><i data-lucide="globe"></i></div>
+                    <h3 class="card-title">community</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('compiler', 'terminal')">
+                    <div class="card-icon"><i data-lucide="terminal"></i></div>
+                    <h3 class="card-title">compiler</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('resume builder', 'file-text')">
+                    <div class="card-icon"><i data-lucide="file-text"></i></div>
+                    <h3 class="card-title">resume builder</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('User feedback', 'user-check')">
+                    <div class="card-icon"><i data-lucide="user-check"></i></div>
+                    <h3 class="card-title">User feedback</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('mock interview', 'video')">
+                    <div class="card-icon"><i data-lucide="video"></i></div>
+                    <h3 class="card-title">mock interview</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('apply for leave', 'calendar-x')">
+                    <div class="card-icon"><i data-lucide="calendar-x"></i></div>
+                    <h3 class="card-title">apply for leave</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('session diaries', 'book-marked')">
+                    <div class="card-icon"><i data-lucide="book-marked"></i></div>
+                    <h3 class="card-title">session diaries</h3>
+                    <div class="card-dot"></div>
+                </div>
+                <div class="card" onclick="navigateTo('BroKod', 'command')">
+                    <div class="card-icon"><i data-lucide="command"></i></div>
+                    <h3 class="card-title">BroKod</h3>
+                    <div class="card-dot"></div>
+                </div>
+            </section>
+        </div>
+
+        <div id="sub-view" class="hidden">
+            <header class="sub-header">
+                <button onclick="goBack()" class="back-btn"><i data-lucide="arrow-left"></i> Back</button>
+                <div class="sub-header-content">
+                    <p class="subtitle" id="sub-subtitle">SECTION</p>
+                    <h1 class="title" id="sub-title">Page Content</h1>
+                </div>
+            </header>
+            <div class="content-area">
+                <!-- Content injected via script.js -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
