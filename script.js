@@ -1,19 +1,135 @@
 lucide.createIcons();
 
 const pageData = {
-    'Home': '<div class="welcome-section"><h2 class="welcome-text">Welcome home</h2><p class="welcome-desc">Your personal dashboard for upcoming classes and quick access to your learning journey.</p></div>',
-    'courses': '<div class="welcome-section"><h2 class="welcome-text">Welcome to courses</h2><p class="welcome-desc">Explore our wide range of professional certification programs and skill-based courses.</p></div>',
-    'practices': '<div class="welcome-section"><h2 class="welcome-text">Welcome to practices</h2><p class="welcome-desc">Sharpen your coding skills with interactive challenges and real-world scenarios.</p></div>',
-    'mentor connect': '<div class="welcome-section"><h2 class="welcome-text">Welcome to mentor connect</h2><p class="welcome-desc">Connect with industry experts for guidance, career advice, and technical support.</p></div>',
-    'feedback': '<div class="welcome-section"><h2 class="welcome-text">Welcome to feedback</h2><p class="welcome-desc">Share your experience and help us improve our learning platform.</p></div>',
-    'community': '<div class="welcome-section"><h2 class="welcome-text">Welcome to community</h2><p class="welcome-desc">Join our vibrant community of learners and share your projects and ideas.</p></div>',
-    'compiler': '<div class="welcome-section"><h2 class="welcome-text">Welcome to compiler</h2><p class="welcome-desc">Write, compile, and run your code directly in the browser across multiple languages.</p></div>',
-    'resume builder': '<div class="welcome-section"><h2 class="welcome-text">Welcome to resume builder</h2><p class="welcome-desc">Create professional, ATS-friendly resumes with our easy-to-use templates.</p></div>',
-    'User feedback': '<div class="welcome-section"><h2 class="welcome-text">Welcome to User feedback</h2><p class="welcome-desc">View and manage feedback received from users and mentors.</p></div>',
-    'mock interview': '<div class="welcome-section"><h2 class="welcome-text">Welcome to mock interview</h2><p class="welcome-desc">Prepare for your dream job with AI-powered mock interviews and expert feedback.</p></div>',
-    'apply for leave': '<div class="welcome-section"><h2 class="welcome-text">Welcome to apply for leave</h2><p class="welcome-desc">Submit and track your leave requests with ease.</p></div>',
-    'session diaries': '<div class="welcome-section"><h2 class="welcome-text">Welcome to session diaries</h2><p class="welcome-desc">Review your past learning sessions, notes, and key takeaways.</p></div>',
-    'BroKod': '<div class="welcome-section"><h2 class="welcome-text">Welcome to BroKod</h2><p class="welcome-desc">Exclusive developer resources, tips, and tricks for the KodNest community.</p></div>'
+
+    'live classes': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Live Classes</h2>
+<p class="welcome-desc">
+Students can view and attend live classes through this section. It displays both upcoming and ongoing sessions so learners can easily keep track of their schedule. During a live class, students can mark their attendance, helping maintain accurate participation records. This feature also allows students to interact with instructors in real time and stay engaged with the learning process.
+</p>
+</div>`,
+
+    'courses': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Courses</h2>
+<p class="welcome-desc">
+This section allows students to explore structured learning paths designed to build strong technical skills and complete industry-relevant certification programs. Students can view all the courses they have opted for and track their progress. It also shows ongoing learning activities to help students stay organized and focused on completing their programs.
+</p>
+</div>`,
+
+    'recordings': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Recordings</h2>
+<p class="welcome-desc">
+Students can watch recordings of previous classes whenever needed. This helps them revise concepts and catch up on sessions they might have missed. By accessing recorded sessions, students can continue learning at their own pace and ensure they understand all topics clearly.
+</p>
+</div>`,
+
+    'practices': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Practices</h2>
+<p class="welcome-desc">
+The practice section helps students improve their coding skills by solving programming problems and real-world challenges. It supports multiple languages such as Java, Python, JavaScript, and Aptitude. Students can practice beginner, intermediate, and advanced level challenges to strengthen their problem-solving skills.
+</p>
+</div>`,
+
+    'mentor connect': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Mentor Connect</h2>
+<p class="welcome-desc">
+Through Mentor Connect, students can get guidance from experienced mentors who help clear technical doubts, review learning progress, and provide career guidance. Mentors offer timely support whenever students face challenges in their learning journey.
+</p>
+</div>`,
+
+    'placements': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Placements</h2>
+<p class="welcome-desc">
+This section provides placement opportunities and updates related to job openings. Students can apply for opportunities, track their application status, and view placement updates. Based on eligibility criteria, students can also check whether they qualify for specific opportunities.
+</p>
+</div>`,
+
+    'community': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Community</h2>
+<p class="welcome-desc">
+The community section allows students to connect with fellow learners, share ideas, discuss projects, and collaborate within the KodNest learning ecosystem. Important announcements, updates, and notifications about events or important dates are also shared here.
+</p>
+</div>`,
+
+    'compiler': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Compiler</h2>
+<p class="welcome-desc">
+KodNest provides an inbuilt compiler where students can write, compile, and run programs directly within the platform. This eliminates the need for installing additional software and allows students to practice coding and test programs conveniently.
+</p>
+</div>`,
+
+    'AI resume builder': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to AI Resume Builder</h2>
+<p class="welcome-desc">
+The AI Resume Builder helps students create professional resumes with AI guidance. It assists in highlighting important skills, projects, and achievements in a structured format, helping students build strong resumes for job applications and placement opportunities.
+</p>
+</div>`,
+
+    'user feedback': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to User Feedback</h2>
+<p class="welcome-desc">
+This section provides options for students to share feedback, raise issues, or report problems. By collecting feedback, the platform team can understand user experiences, improve features, and resolve issues quickly.
+</p>
+</div>`,
+
+    'mock interview': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Mock Interview</h2>
+<p class="welcome-desc">
+Mock interviews allow students to practice interview scenarios and prepare for both technical and HR interview rounds. This helps build confidence, improve communication skills, and understand real interview environments.
+</p>
+</div>`,
+
+    'attendance management': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Attendance Management</h2>
+<p class="welcome-desc">
+Students can track their attendance for different classes and learning sessions. This helps them monitor their participation and maintain consistency in attending sessions throughout their learning journey.
+</p>
+</div>`,
+
+    'leave management': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Leave Management</h2>
+<p class="welcome-desc">
+The leave management system allows students to apply for leave when necessary and track approval status easily. The process is simple and organized, ensuring proper communication with the administration.
+</p>
+</div>`,
+
+    'BroKod': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to BroKod</h2>
+<p class="welcome-desc">
+BroKod provides exclusive coding tips, developer resources, and advanced learning guidance. Instead of giving direct answers, it encourages students to analyze and think through the solutions, helping them develop stronger logical thinking and problem-solving skills.
+</p>
+</div>`,
+
+    'certifications': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Certifications</h2>
+<p class="welcome-desc">
+Students can view and download certificates earned after successfully completing courses or programs. These certificates serve as proof of achievements and can be used to showcase skills in academic or professional opportunities.
+</p>
+</div>`,
+
+    'pending actions': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Pending Actions</h2>
+<p class="welcome-desc">
+The pending actions section helps students track tasks they still need to complete. It displays incomplete activities, reminders, or required submissions so students can manage responsibilities effectively and ensure no important task is missed.
+</p>
+</div>`
+
 };
 
 function navigateTo(name, icon) {
