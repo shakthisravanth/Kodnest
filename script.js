@@ -34,6 +34,14 @@ The practice section helps students improve their coding skills by solving progr
 </p>
 </div>`,
 
+    'BroKod': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to BroKod</h2>
+<p class="welcome-desc">
+BroKod provides exclusive coding tips, developer resources, and advanced learning guidance. Instead of giving direct answers, it encourages students to analyze and think through the solutions, helping them develop stronger logical thinking and problem-solving skills.
+</p>
+</div>`,
+
     'mentor connect': `
 <div class="welcome-section">
 <h2 class="welcome-text">Welcome to Mentor Connect</h2>
@@ -50,11 +58,19 @@ This section provides placement opportunities and updates related to job opening
 </p>
 </div>`,
 
-    'community': `
+    'AI resume builder': `
 <div class="welcome-section">
-<h2 class="welcome-text">Welcome to Community</h2>
+<h2 class="welcome-text">Welcome to AI Resume Builder</h2>
 <p class="welcome-desc">
-The community section allows students to connect with fellow learners, share ideas, discuss projects, and collaborate within the KodNest learning ecosystem. Important announcements, updates, and notifications about events or important dates are also shared here.
+The AI Resume Builder helps students create professional resumes with AI guidance. It assists in highlighting important skills, projects, and achievements in a structured format, helping students build strong resumes for job applications and placement opportunities.
+</p>
+</div>`,
+
+    'mock interview': `
+<div class="welcome-section">
+<h2 class="welcome-text">Welcome to Mock Interview</h2>
+<p class="welcome-desc">
+Mock interviews allow students to practice interview scenarios and prepare for both technical and HR interview rounds. This helps build confidence, improve communication skills, and understand real interview environments.
 </p>
 </div>`,
 
@@ -66,27 +82,19 @@ KodNest provides an inbuilt compiler where students can write, compile, and run 
 </p>
 </div>`,
 
-    'AI resume builder': `
+    'pending actions': `
 <div class="welcome-section">
-<h2 class="welcome-text">Welcome to AI Resume Builder</h2>
+<h2 class="welcome-text">Welcome to Pending Actions</h2>
 <p class="welcome-desc">
-The AI Resume Builder helps students create professional resumes with AI guidance. It assists in highlighting important skills, projects, and achievements in a structured format, helping students build strong resumes for job applications and placement opportunities.
+The pending actions section helps students track tasks they still need to complete. It displays incomplete activities, reminders, or required submissions so students can manage responsibilities effectively and ensure no important task is missed.
 </p>
 </div>`,
 
-    'user feedback': `
+    'community': `
 <div class="welcome-section">
-<h2 class="welcome-text">Welcome to User Feedback</h2>
+<h2 class="welcome-text">Welcome to Community</h2>
 <p class="welcome-desc">
-This section provides options for students to share feedback, raise issues, or report problems. By collecting feedback, the platform team can understand user experiences, improve features, and resolve issues quickly.
-</p>
-</div>`,
-
-    'mock interview': `
-<div class="welcome-section">
-<h2 class="welcome-text">Welcome to Mock Interview</h2>
-<p class="welcome-desc">
-Mock interviews allow students to practice interview scenarios and prepare for both technical and HR interview rounds. This helps build confidence, improve communication skills, and understand real interview environments.
+The community section allows students to connect with fellow learners, share ideas, discuss projects, and collaborate within the KodNest learning ecosystem. Important announcements, updates, and notifications about events or important dates are also shared here.
 </p>
 </div>`,
 
@@ -106,11 +114,11 @@ The leave management system allows students to apply for leave when necessary an
 </p>
 </div>`,
 
-    'BroKod': `
+    'user feedback': `
 <div class="welcome-section">
-<h2 class="welcome-text">Welcome to BroKod</h2>
+<h2 class="welcome-text">Welcome to User Feedback</h2>
 <p class="welcome-desc">
-BroKod provides exclusive coding tips, developer resources, and advanced learning guidance. Instead of giving direct answers, it encourages students to analyze and think through the solutions, helping them develop stronger logical thinking and problem-solving skills.
+This section provides options for students to share feedback, raise issues, or report problems. By collecting feedback, the platform team can understand user experiences, improve features, and resolve issues quickly.
 </p>
 </div>`,
 
@@ -119,14 +127,6 @@ BroKod provides exclusive coding tips, developer resources, and advanced learnin
 <h2 class="welcome-text">Welcome to Certifications</h2>
 <p class="welcome-desc">
 Students can view and download certificates earned after successfully completing courses or programs. These certificates serve as proof of achievements and can be used to showcase skills in academic or professional opportunities.
-</p>
-</div>`,
-
-    'pending actions': `
-<div class="welcome-section">
-<h2 class="welcome-text">Welcome to Pending Actions</h2>
-<p class="welcome-desc">
-The pending actions section helps students track tasks they still need to complete. It displays incomplete activities, reminders, or required submissions so students can manage responsibilities effectively and ensure no important task is missed.
 </p>
 </div>`
 
@@ -151,12 +151,25 @@ function navigateTo(name, icon) {
         document.getElementById('sub-subtitle').innerText = name.toUpperCase();
 
         const contentArea = document.querySelector('.content-area');
-        contentArea.innerHTML = pageData[name] || `
-            <div class="welcome-section">
-                <h2 class="welcome-text">Welcome to ${name}</h2>
-                <p class="welcome-desc">This section is being prepared with your custom content.</p>
-            </div>
-        `;
+        const videoId = videoLinks[name];
+
+        let videoSection = '';
+
+        if (videoId) {
+            videoSection = `
+        <div class="video-wrapper" onclick="playVideo(this,'${videoId}')">
+            <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" class="video-thumbnail">
+            <div class="play-button">▶</div>
+        </div>
+    `;
+        }
+
+        contentArea.innerHTML = videoSection + (pageData[name] || `
+    <div class="welcome-section">
+        <h2 class="welcome-text">Welcome to ${name}</h2>
+        <p class="welcome-desc">This section is being prepared with your custom content.</p>
+    </div>
+`);
 
         lucide.createIcons();
     }, 250); // Matches CSS transition speed
@@ -175,4 +188,36 @@ function goBack() {
         mainView.classList.remove('hidden');
         mainView.classList.add('fade-in');
     }, 250);
+}
+
+const videoLinks = {
+    'live classes': 'v0HVkXXJmyg',
+    'courses': 'HkH5CwfUONk',
+    'recordings': '3fumBcKC6RE',
+    'practices': 'M7lc1UVf-VE',
+    'BroKod': '',
+    'mentor connect': 'ysz5S6PUM-U',
+    'placements': 'ScMzIvxBSi4',
+    'AI resume builder': '',
+    'mock interview': '',
+    'compiler': '',
+    'pending actions': '',
+    'community': 'aqz-KE-bpKQ',
+    'attendance management': '',
+    'leave management': '',
+    'user feedback': '',
+    'certifications': ''
+};
+
+function playVideo(element, videoId) {
+    element.innerHTML = `
+        <iframe 
+            width="100%" 
+            height="420"
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    `;
 }
