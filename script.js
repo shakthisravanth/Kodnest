@@ -31,7 +31,7 @@ const pageData = {
 <h3>Attendance During Live Classes</h3>
 <p class="welcome-desc">While attending a live class, students must mark their attendance. During class timings, an attendance popup will appear randomly on the screen. This popup ensures that students are actively present in the class.</p>
 
-<p class="welcome-desc">When the popup appears, the student must mark their attendance within the given time frame. If the student does not respond within the allowed time, the system will automatically mark them as Absent.</p>
+<p class="welcome-desc">When the popup appears, the student must mark their attendance within the given time frame [15 minutes]. If the student does not respond within the allowed time, the system will automatically mark them as Absent.</p>
 
 <p class="welcome-desc"><strong>Important Rule:</strong> The Absent status is triggered only if the attendance popup appears and the student fails to mark attendance within the time limit. This ensures that no one can bypass the attendance system. Students should stay attentive during class to avoid missing the attendance popup.</p>
 
