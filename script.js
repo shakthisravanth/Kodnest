@@ -1092,9 +1092,9 @@ function goBack() {
 }
 
 // Handle browser back button
-window.addEventListener('popstate', function(event) {
+window.addEventListener('popstate', function (event) {
     const subView = document.getElementById('sub-view');
-    
+
     // If we're in the sub-view, go back to main view
     if (!subView.classList.contains('hidden')) {
         goBack();
@@ -1109,20 +1109,20 @@ function scrollToTop() {
 const videoLinks = {
     'live classes': 'v0HVkXXJmyg',
     'courses': 'HkH5CwfUONk',
-    'recordings': '3fumBcKC6RE',
+    'recordings': 'M7lc1UVf-VE',
     'practices': 'M7lc1UVf-VE',
     'BroKod': 'YhXeZqx2NYA',
     'mentor connect': 'tM31pZEgFeY',
     'placements': 'm8oduAUdeUY',
-    'AI resume builder': '',
-    'mock interview': '',
-    'compiler': '',
-    'pending actions': '',
+    'AI resume builder': 'M7lc1UVf-VE',
+    'mock interview': 't1gAIGd1Ce4',
+    'compiler': '9rnjmU1nQD4',
+    'pending actions': 'M7lc1UVf-VE',
     'community': 'aqz-KE-bpKQ',
-    'attendance management': '',
-    'leave management': '',
-    'user feedback': '',
-    'certifications': ''
+    'attendance management': 'M7lc1UVf-VE',
+    'leave management': 'M7lc1UVf-VE',
+    'user feedback': 'M7lc1UVf-VE',
+    'certifications': 'M7lc1UVf-VE'
 };
 
 function playVideo(element, videoId) {
