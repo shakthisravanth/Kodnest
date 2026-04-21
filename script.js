@@ -1122,7 +1122,7 @@ const videoLinks = {
     'attendance management': 'M7lc1UVf-VE',
     'leave management': 'M7lc1UVf-VE',
     'user feedback': 'M7lc1UVf-VE',
-    'certifications': 'M7lc1UVf-VE'
+    'certifications': ''
 };
 
 function playVideo(element, videoId) {
