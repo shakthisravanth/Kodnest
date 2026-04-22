@@ -1107,7 +1107,7 @@ function scrollToTop() {
 }
 
 const videoLinks = {
-    'live classes': 'v0HVkXXJmyg',
+    'live classes': 'n5nwuK_m8r8',
     'courses': 'HkH5CwfUONk',
     'recordings': 'M7lc1UVf-VE',
     'practices': 'M7lc1UVf-VE',
@@ -1128,11 +1128,10 @@ const videoLinks = {
 function playVideo(element, videoId) {
     element.innerHTML = `
         <iframe 
-            width="100%" 
-            height="420"
+            class="video-iframe"
             src="https://www.youtube.com/embed/${videoId}?autoplay=1"
             frameborder="0"
-            allow="autoplay; encrypted-media"
+            allow="autoplay; encrypted-media; fullscreen"
             allowfullscreen>
         </iframe>
     `;
