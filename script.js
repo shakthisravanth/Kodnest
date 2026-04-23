@@ -1108,7 +1108,7 @@ function scrollToTop() {
 
 const videoLinks = {
     'live classes': 'n5nwuK_m8r8',
-    'courses': 'HkH5CwfUONk',
+    'courses': 'Di1SpzWnpTg',
     'recordings': 'M7lc1UVf-VE',
     'practices': 'M7lc1UVf-VE',
     'BroKod': 'YhXeZqx2NYA',
