@@ -1,6 +1,4 @@
-lucide.createIcons();
-
-const pageData = {
+export const pageData = {
 
     'live classes': `
 <div class="welcome-section">
@@ -1028,111 +1026,21 @@ const pageData = {
 
 };
 
-function navigateTo(name) {
-    const mainView = document.getElementById('main-view');
-    const subView = document.getElementById('sub-view');
-
-    // Push state to history for browser back button support
-    history.pushState({ view: 'sub', name: name }, '', '#');
-
-    // Smoothly fade out the current view
-    mainView.classList.add('fade-out');
-
-    setTimeout(() => {
-        mainView.classList.add('hidden');
-        mainView.classList.remove('fade-out');
-
-        // Prepare and show the next view
-        subView.classList.remove('hidden');
-        subView.classList.add('fade-in');
-
-        document.getElementById('sub-title').innerText = name;
-        document.getElementById('sub-subtitle').innerText = name.toUpperCase();
-
-        const contentArea = document.querySelector('.content-area');
-        const videoId = videoLinks[name];
-
-        let videoSection = '';
-
-        if (videoId) {
-            videoSection = `
-        <div class="video-wrapper" onclick="playVideo(this,'${videoId}')">
-            <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" class="video-thumbnail">
-            <div class="play-button">▶</div>
-        </div>
-    `;
-        }
-
-        contentArea.innerHTML = videoSection + (pageData[name] || `
-    <div class="welcome-section">
-        <h2 class="welcome-text">Welcome to ${name}</h2>
-        <p class="welcome-desc">This section is being prepared with your custom content.</p>
-    </div>
-`);
-
-        lucide.createIcons();
-        scrollToTop();
-    }, 250);
-}
-
-function goBack() {
-    const mainView = document.getElementById('main-view');
-    const subView = document.getElementById('sub-view');
-
-    subView.classList.add('fade-out');
-
-    setTimeout(() => {
-        subView.classList.add('hidden');
-        subView.classList.remove('fade-out');
-
-        mainView.classList.remove('hidden');
-        mainView.classList.add('fade-in');
-        scrollToTop();
-    }, 250);
-}
-
-// Handle browser back button
-window.addEventListener('popstate', function (event) {
-    const subView = document.getElementById('sub-view');
-
-    // If we're in the sub-view, go back to main view
-    if (!subView.classList.contains('hidden')) {
-        goBack();
-    }
-});
-
-// Smooth scroll to top when navigating
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-const videoLinks = {
+export const videoLinks = {
     'live classes': 'n5nwuK_m8r8',
     'courses': 'Di1SpzWnpTg',
-    'recordings': 'M7lc1UVf-VE',
-    'practices': 'M7lc1UVf-VE',
-    'BroKod': 'YhXeZqx2NYA',
-    'mentor connect': 'tM31pZEgFeY',
-    'placements': 'm8oduAUdeUY',
-    'AI resume builder': 'M7lc1UVf-VE',
-    'mock interview': 't1gAIGd1Ce4',
-    'compiler': '9rnjmU1nQD4',
-    'pending actions': 'M7lc1UVf-VE',
-    'community': 'aqz-KE-bpKQ',
-    'attendance management': 'M7lc1UVf-VE',
-    'leave management': 'M7lc1UVf-VE',
-    'user feedback': 'M7lc1UVf-VE',
-    'certifications': ''
+    'recordings': 'hpEMOmnQNzc',
+    'practices': 'FXgyNBS6v2Q',
+    'BroKod': '53ygMbKGhBQ',
+    'mentor connect': 'Fhr769feEuQ',
+    'placements': 'w5i-YbwckkQ',
+    'AI resume builder': 'vne1kj4h54E',
+    'mock interview': 'bcslDPTfB2s',
+    'compiler': 'opJ9NJQXRoE',
+    'pending actions': 'XsOyedv5isA',
+    'community': 'FvvuBhW4-2Q',
+    'attendance management': 'gK2YbempbcQ',
+    'leave management': 'sojcb1HVn1Q',
+    'user feedback': 'Vtyt8MZgd6Q',
+    'certifications': 'FwwFjEhM6KI'
 };
-
-function playVideo(element, videoId) {
-    element.innerHTML = `
-        <iframe 
-            class="video-iframe"
-            src="https://www.youtube.com/embed/${videoId}?autoplay=1"
-            frameborder="0"
-            allow="autoplay; encrypted-media; fullscreen"
-            allowfullscreen>
-        </iframe>
-    `;
-}
